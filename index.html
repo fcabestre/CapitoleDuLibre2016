@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Title</title>
+    <title>Back to basics: SSL/TLS</title>
 
-    <meta name="description" content="">
+    <meta name="description" content="Les bases de SSL et TLS">
     <meta name="author" content="Frédéric Cabestre">
 
     <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
-    <link rel="stylesheet" href="myAssets/css/transparents.css">
+    <link rel="stylesheet" href="css/Transparents.css">
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -41,18 +41,245 @@
 <div class="reveal">
 
     <div class="slides">
-
         <section>
-            <h1>Title</h1>
+            <section>
+                <h1><span class="orange">TLS</span></h1>
+                <h2>Des briques de base à «<span class="green">Let's encrypt</span>»</h2>
+                </a>
+                <p class="blue">
+                    @fcabestre
+                </p>
+            </section>
+
+            <section>
+                <h2>Repères historiques</h2>
+
+                <ul>
+                    <span class="fragment">
+                        <li>1994 - Secure Socket Layer 1.0</li>
+                        <li>1995 - Secure Socket Layer 2.0</li>
+                        <li>1996 - Secure Socket Layer 3.0</li>
+                    </span>
+
+                    <span class="fragment">
+                        <li>1999 - Transport Layer Security 1.0</li>
+                        <li>2006 - Transport Layer Security 1.1</li>
+                        <li>2008 - Transport Layer Security 1.2</li>
+                    </span>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Objectifs</h2>
+
+                <ul>
+                    <span class="fragment"><li>Authentification</li></span>
+                    <span class="fragment"><li>Confidentialité</li></span>
+                    <span class="fragment"><li>Intégrité</li></span>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Le principe</h2>
+
+                <ul>
+                    <span class="fragment"><li>Niveau transport</li></span>
+                    <span class="fragment"><img src="images/libssl.svg"></span>
+                    <span class="fragment"><li>Assemblage cryptographique</li></span>
+                    <span class="fragment"><li>Bibliothèques : OpenSSL, GNU TLS, JSSE...</li></span>
+                </ul>
+            </section>
         </section>
 
+        <section>
+
+            <section>
+                <h1>Briques de base</h1>
+            </section>
+
+            <section>
+                <h2>Hachage</h2>
+
+                <ul>
+                    <span class="fragment"><li>Empreinte taille fixe
+                        <p class="green">c558784f0690ab20ede545f0c9c65ce3c5717898</p>
+                    </li></span>
+                    <span class="fragment"><li>MD5</li></span>
+                    <span class="fragment"><li>SHA1, SHA256...</li></span>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Chiffrement symétrique</h2>
+
+                <ul>
+                    <span class="fragment"><li>Clef partagée</li></span>
+                    <span class="fragment"><li>Rapide</li></span>
+                    <span class="fragment"><li>3DES</li></span>
+                    <span class="fragment"><li>AES128, AES256, AES512</li></span>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Mode d'opération</h2>
+
+                <ul>
+                    <span class="fragment"><li>Chiffrement de blocs consécutifs</li></span>
+                    <span class="fragment"><img src="images/cbc.png"></span>
+                    <span class="fragment"><li>ECB</li></span>
+                    <span class="fragment"><li>CBC, CFB, OFB...</li></span>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Chiffrement assymétrique</h2>
+
+                <ul>
+                    <span class="fragment"><li>Clef privée + publique</li></span>
+                    <span class="fragment"><li>Lent</li></span>
+                    <span class="fragment"><li>Signature</li></span>
+                    <span class="fragment"><li>RSA, DSA</li></span>
+                    <span class="fragment"><li>ECDSA</li></span>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Échange de clefs</h2>
+
+                <ul>
+                    <span class="fragment"><li>Diffie-Hellman</li></span>
+                    <span class="fragment"><li>Faiblesse</li></span>
+                </ul>
+            </section>
+
+        </section>
+
+        <section>
+
+            <section>
+                <h1>Le protocole</h1>
+            </section>
+
+            <section>
+                <h2>Certificats</h2>
+
+                <ul>
+                    <span class="fragment"><li>Enrobage</li></span>
+                    <span class="fragment"><li>Méta données</li></span>
+                    <span class="fragment"><li>Cryptographiquement signé</li></span>
+                    <span class="fragment"><li>Norme X.509</li></span>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Établissement de la session</h2>
+
+                <span class="fragment"><img src="images/nego0.svg"></span>
+                <span class="fragment"><img src="images/nego1.svg"></span>
+                <span class="fragment"><img src="images/nego2.svg"></span>
+                <span class="fragment"><img src="images/nego3.svg"></span>
+                <span class="fragment"><img src="images/nego4.svg"></span>
+                <span class="fragment"><img src="images/nego5.svg"></span>
+                <span class="fragment"><img src="images/nego6.svg"></span>
+            </section>
+
+        </section>
+
+        <section>
+
+            <section>
+                <h1>La confiance</h1>
+            </section>
+
+            <section>
+                <h2>Certificats auto-signés</h2>
+
+                <ul>
+                    <span class="fragment"><li>Signature ⇒ clef privée</li></span>
+                    <span class="fragment"><li>Vérification ⇒ clef publique</li></span>
+                    <span class="fragment"><li>Clef publique ⇒ certificat</li></span>
+                    <span class="fragment"><img src="images/certificat.svg"></span>
+                    <span class="fragment"><li>Confiance</li></span>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Chaînes de certification</h2>
+
+                <ul>
+                    <span class="fragment"><li>Exhaustivité</li></span>
+                    <span class="fragment"><li>Délégation</li></span>
+                    <span class="fragment"><img src="images/chaine.svg"></span>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Autorités de certification</h2>
+
+                <ul>
+                    <span class="fragment"><li>Tiers de confiance</li></span>
+                    <span class="fragment"><li>Verisign, Thawte</span><span class="fragment">, <span
+                        class="orange">Moi</span>...</li></span>
+                    <span class="fragment"><li>Qui surveille les surveillants ?</li></span>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Certificat compromis</h2>
+
+                <ul>
+                    <span class="fragment"><img src="images/compromission.svg"></span>
+                    <span class="fragment"><li>Invalidation multiples</li></span>
+                </ul>
+
+            </section>
+
+            <section>
+                <h2>Liste de révocations</h2>
+
+                <ul>
+                    <span class="fragment"><li>Éditée par les CA</li></span>
+                    <span class="fragment"><li>Gestion délicate</li></span>
+                </ul>
+            </section>
+
+            <section>
+                <h2>OCSP</h2>
+
+                <ul>
+                    <span class="fragment"><li>Online Certificate Status Protocol</li></span>
+                    <span class="fragment"><li>Basé sur HTTP<span class="orange">S</span></li></span>
+                    <span class="fragment"><li>Limitations</li></span>
+                </ul>
+            </section>
+
+            <section>
+                <h2>DANE</h2>
+
+                <ul>
+                    <span class="fragment"><li>DNS-Based Authentication of Named Entities</li></span>
+                    <span class="fragment"><li>Basé sur DNSSEC</li></span>
+                    <span class="fragment"><li>Enregistrements TLSA</li></span>
+                </ul>
+            </section>
+
+        </section>
+
+        <section>
+            <h1>Conclusion</h1>
+
+            <ul>
+                <span class="fragment"><li>No silver bullet</li></span>
+                <span class="fragment"><li>Connaissance fonctionnement</li></span>
+                <span class="fragment"><li>Connaissance infrastructure</li></span>
+            </ul>
+        </section>
     </div>
 
 </div>
 
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.js"></script>
-<script src="myAssets/js/d3.min.js"></script>
 
 <script>
 
@@ -66,14 +293,8 @@
 
         transition: 'none', // none/fade/slide/convex/concave/zoom
 
-        math: {
-            mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
-            config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
-        },
-
         // Optional reveal.js plugins
         dependencies: [
-            {src: 'plugin/math/math.js', async: true},
             {
                 src: 'lib/js/classList.js', condition: function () {
                 return !document.body.classList;
@@ -97,12 +318,7 @@
             }
             },
             {src: 'plugin/zoom-js/zoom.js', async: true},
-            {src: 'plugin/notes/notes.js', async: true},
-            {
-                src: 'myAssets/js/reveal-svg-fragment.js', condition: function () {
-                return !!document.querySelector('[data-svg-fragment]');
-            }
-            }
+            {src: 'plugin/notes/notes.js', async: true}
         ]
     });
 
