@@ -27,6 +27,12 @@ body {
   box-shadow: 0 0 0;
 }
 
+.reveal .slides section img[src$=".svg"] {
+  margin: 15px 0;
+  border: none;
+  box-shadow: 0 0 0;
+}
+
 .reveal .slides section blockquote {
   margin: 15px 0;
   width: 100%;
