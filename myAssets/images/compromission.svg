@@ -14,7 +14,7 @@
    id="svg5720"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="compromission_.svg">
+   sodipodi:docname="compromission.svg">
   <defs
      id="defs5722">
     <marker
@@ -173,7 +173,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2"
-     inkscape:cx="228.46909"
+     inkscape:cx="107.21909"
      inkscape:cy="226.62547"
      inkscape:current-layer="layer2"
      inkscape:document-units="px"
@@ -383,7 +383,7 @@
        r="36.799221"
        cy="142.77527"
        cx="431.88693"
-       style="fill:none;fill-opacity:1;stroke:#dc322f;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#dc322f;fill-opacity:0.32303372;stroke:#dc322f;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path5732-3-8" />
     <text
        transform="translate(-181.88697,107.22474)"

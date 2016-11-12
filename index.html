@@ -42,10 +42,12 @@
 
     <div class="slides">
         <section>
-            <h1><span class="orange">TLS</span></h1>
-
+            <h1>TLS</h1>
             <h2>Des briques de base à «<span class="green">Let's encrypt</span>»</h2>
-            </a>
+        </section>
+
+        <section>
+            <h2>Frédéric Cabestre</h2>
             <p class="blue">
                 @fcabestre
             </p>
@@ -191,7 +193,10 @@
                 <li class="fragment">Signature ⇒ clef privée</li>
                 <li class="fragment">Vérification ⇒ clef publique</li>
                 <li class="fragment">Clef publique ⇒ certificat</li>
-                <div class="fragment"><img src="myAssets/images/certificat.svg"></div>
+                <div data-svg-fragment="myAssets/images/certificat.svg#[*|label=toto]">
+                    <a class="fragment" title="[*|label=base]"></a>
+                    <a class="fragment" title="[*|label=frag1]"></a>
+                </div>
                 <li class="fragment">Confiance</li>
             </ul>
         </section>
@@ -202,7 +207,8 @@
             <ul>
                 <li class="fragment">Exhaustivité</li>
                 <li class="fragment">Délégation</li>
-                <div data-svg-fragment="myAssets/images/chaine.svg#[*|label=base]">
+                <div data-svg-fragment="myAssets/images/chaine.svg#[*|label=toto]">
+                    <a class="fragment" title="[*|label=base]"></a>
                     <a class="fragment" title="[*|label=frag1]"></a>
                     <a class="fragment" title="[*|label=frag2]"></a>
                     <a class="fragment" title="[*|label=frag3]"></a>
@@ -215,7 +221,7 @@
 
             <ul>
                 <li class="fragment">Tiers de confiance</li>
-                <li class="fragment">Verisign, Thawte, <span class="fragment orange">Moi</span>...</li>
+                <li class="fragment">Verisign, Thawte, <span class="fragment"><span class="orange">Moi</span>...</span></li>
                 <li class="fragment">Qui surveille les surveillants ?</li>
             </ul>
         </section>
@@ -239,27 +245,13 @@
             <ul>
                 <li class="fragment">Éditée par les CA</li>
                 <li class="fragment">Gestion délicate</li>
+                <li class="fragment">OCSP</li>
+                <li class="fragment">DANE</li>
             </ul>
         </section>
 
         <section>
-            <h2>OCSP</h2>
-
-            <ul>
-                <li class="fragment">Online Certificate Status Protocol</li>
-                <li class="fragment">Basé sur HTTP<div class="orange">S</div></li>
-                <li class="fragment">Limitations</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>DANE</h2>
-
-            <ul>
-                <li class="fragment">DNS-Based Authentication of Named Entities</li>
-                <li class="fragment">Basé sur DNSSEC</li>
-                <li class="fragment">Enregistrements TLSA</li>
-            </ul>
+            <h2>Let's Encrypt</h2>
         </section>
 
         <section>
@@ -270,6 +262,10 @@
                 <li class="fragment">Connaissance fonctionnement</li>
                 <li class="fragment">Connaissance infrastructure</li>
             </ul>
+        </section>
+
+        <section>
+            <h1>Merci</h1>
         </section>
     </div>
 

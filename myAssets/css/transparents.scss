@@ -5,6 +5,10 @@ body {
   background-color: #FFFFFF;
 }
 
+.reveal h1 {
+  color: $orange;
+}
+
 .reveal h2 {
   color: $yellow;
 }
@@ -23,7 +27,7 @@ body {
 
 .reveal .slides section img {
   margin: 15px 0;
-  border: 1pt solid black;
+  border: none;
   box-shadow: 0 0 0;
 }
 
@@ -44,4 +48,8 @@ body {
   font-weight: bolder;
   font-style: italic;
   font-size: larger;
+}
+
+.reveal .slides section ul {
+  margin-bottom: 100%;
 }
