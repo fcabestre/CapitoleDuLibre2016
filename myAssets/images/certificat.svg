@@ -9,8 +9,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="250"
-   height="250"
+   width="300"
+   height="300"
    id="svg5720"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -111,9 +111,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.6933594"
-     inkscape:cx="-34.000897"
-     inkscape:cy="135.50396"
-     inkscape:current-layer="layer2"
+     inkscape:cx="106.25285"
+     inkscape:cy="111.88228"
+     inkscape:current-layer="layer1"
      inkscape:document-units="px"
      showgrid="true"
      inkscape:window-width="1600"
@@ -138,7 +138,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -146,13 +146,13 @@
      id="layer1"
      inkscape:label="base"
      inkscape:groupmode="layer"
-     transform="translate(-291.50826,-35.01346)"
+     transform="translate(-291.50826,14.98654)"
      style="display:inline">
     <circle
        style="fill:none;fill-opacity:1;stroke:#859900;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path5732"
-       cx="409.21106"
-       cy="189.31065"
+       cx="463.21106"
+       cy="159.31065"
        r="63.702808" />
     <text
        xml:space="preserve"
@@ -191,24 +191,24 @@
          id="flowPara3852" /></flowRoot>    <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#859900;fill-opacity:1;stroke:none"
-       x="366.19348"
-       y="199.8712"
+       x="420.19348"
+       y="169.8712"
        id="text3033"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="366.19348"
-         y="199.8712"
+         x="420.19348"
+         y="169.8712"
          id="tspan3037">Cert</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="frag1"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(0,50)">
     <path
-       transform="translate(-291.50826,-35.01346)"
        style="fill:none;stroke:#b58900;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
-       d="m 474.76125,193.0613 51.37716,0 -0.29527,-130.509803 -116.33679,-0.590542 0.88581,58.168395"
+       d="m 237.25299,128.04784 51.37716,0 -0.29527,-130.509803 -116.33679,-0.590542 0.88581,58.168395"
        id="path3043"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
