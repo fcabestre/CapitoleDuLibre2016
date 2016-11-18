@@ -22,6 +22,21 @@
        orient="auto"
        refY="0"
        refX="0"
+       id="marker4394"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4396"
+         style="fill:#586e75;fill-opacity:1;fill-rule:evenodd;stroke:#586e75;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
        id="marker10998"
        style="overflow:visible"
        inkscape:isstock="true">
@@ -417,9 +432,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.095627"
-     inkscape:cx="227.81157"
-     inkscape:cy="155.91066"
-     inkscape:current-layer="layer8"
+     inkscape:cx="225.52977"
+     inkscape:cy="301.94576"
+     inkscape:current-layer="layer5"
      inkscape:document-units="px"
      showgrid="true"
      showguides="true"
@@ -556,7 +571,7 @@
      style="display:inline"
      transform="translate(0,120.9064)">
     <path
-       style="display:inline;fill:none;stroke:#586e75;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker10322)"
+       style="display:inline;fill:none;stroke:#586e75;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker10322);marker-start:url(#marker4394)"
        d="m 57.013805,184.43211 432.628995,0"
        id="path3003-4-5"
        inkscape:connector-curvature="0" />

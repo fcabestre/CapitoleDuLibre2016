@@ -85,9 +85,9 @@
             <h2>Le principe</h2>
 
             <ul>
-                <li class="fragment">Niveau transport
-                    <img src="myAssets/images/libssl.svg">
-                </li>
+                <div data-svg-fragment="myAssets/images/libssl.svg#[*|label=base]">
+                    <a class="fragment" title="[*|label=frag1]"></a>
+                </div>
                 <li class="fragment">Assemblage cryptographique</li>
                 <li class="fragment">Bibliothèques : OpenSSL, GNU TLS, JSSE...</li>
             </ul>
@@ -101,9 +101,12 @@
             <h2>Hachage</h2>
 
             <ul style="margin-top: 2em">
-                <li class="fragment">Empreinte taille fixe
-                    <p class="green">c558784f0690ab20ede545f0c9c65ce3c5717898</p>
-                </li>
+                <li class="fragment">Empreinte taille fixe</li>
+                <div data-svg-fragment="myAssets/images/hashage.svg#[*|label=toto]">
+                    <a class="fragment" title="[*|label=base]"></a>
+                    <a class="fragment" title="[*|label=frag1]"></a>
+                    <a class="fragment" title="[*|label=frag2]"></a>
+                </div>
                 <li class="fragment">MD5</li>
                 <li class="fragment">SHA1, SHA256...</li>
             </ul>
@@ -112,9 +115,14 @@
         <section>
             <h2>Chiffrement symétrique</h2>
 
-            <ul style="margin-top: 2em">
+            <ul style="margin-top: 1em">
                 <li class="fragment">Clef partagée</li>
-                <li class="fragment">Rapide</li>
+                <div data-svg-fragment="myAssets/images/symétrique.svg#[*|label=toto]">
+                    <a class="fragment" title="[*|label=base]"></a>
+                    <a class="fragment" title="[*|label=frag1]"></a>
+                    <a class="fragment" title="[*|label=frag2]"></a>
+                </div>
+                <li class="fragment">Rapide<span class="fragment"> ⇒ Volumes</li></span>
                 <li class="fragment">3DES</li>
                 <li class="fragment">AES128, AES256, AES512</li>
             </ul>
@@ -123,9 +131,9 @@
         <section>
             <h2>Mode d'opération</h2>
 
-            <ul>
+            <ul style="margin-top: 1em">
                 <li class="fragment">Chiffrement de blocs consécutifs</li>
-                <div class="fragment"><img src="myAssets/images/cbc.png"></div>
+                <img style="margin-bottom: 40px; margin-top: 40px" class="fragment" src="myAssets/images/cbc.png">
                 <li class="fragment">ECB</li>
                 <li class="fragment">CBC, CFB, OFB...</li>
             </ul>
@@ -134,10 +142,14 @@
         <section>
             <h2>Chiffrement assymétrique</h2>
 
-            <ul  style="margin-top: 2em">
+            <ul style="margin-top: 1em">
                 <li class="fragment">Clef privée + publique</li>
-                <li class="fragment">Lent</li>
-                <li class="fragment">Signature</li>
+                <div data-svg-fragment="myAssets/images/assymétrique.svg#[*|label=toto]">
+                    <a class="fragment" title="[*|label=base]"></a>
+                    <a class="fragment" title="[*|label=frag1]"></a>
+                    <a class="fragment" title="[*|label=frag2]"></a>
+                </div>
+                <li class="fragment">Lent<span class="fragment"> ⇒ Signature</span></li>
                 <li class="fragment">RSA, DSA</li>
                 <li class="fragment">ECDSA</li>
             </ul>
@@ -147,6 +159,8 @@
             <h2>Échange de clefs</h2>
 
             <ul  style="margin-top: 3em">
+                <li class="fragment">Symétrie ⇒ Partage de clef</li>
+                <li class="fragment">Assymétrie à la rescousse</li>
                 <li class="fragment">Diffie-Hellman</li>
             </ul>
         </section>
@@ -160,7 +174,7 @@
             <h2>Certificats</h2>
 
             <ul  style="margin-top: 2em">
-                <li class="fragment">Enrobage</li>
+                <li class="fragment">Enrobage de clef publique</li>
                 <li class="fragment">Méta données</li>
                 <li class="fragment">Cryptographiquement signé</li>
                 <li class="fragment">Norme X.509</li>
@@ -196,7 +210,7 @@
                     <a class="fragment" title="[*|label=base]"></a>
                     <a class="fragment" title="[*|label=frag1]"></a>
                 </div>
-                <li class="fragment">Confiance</li>
+                <li class="fragment">Confiance ≡ Import explicite</li>
             </ul>
         </section>
 
@@ -204,8 +218,8 @@
             <h2>Chaînes de certification</h2>
 
             <ul>
-                <li class="fragment">Exhaustivité</li>
-                <li class="fragment">Délégation</li>
+                <li class="fragment">Exhaustivité des imports</li>
+                <li class="fragment">Une solution est la délégation</li>
                 <div data-svg-fragment="myAssets/images/chaine.svg#[*|label=toto]">
                     <a class="fragment" title="[*|label=base]"></a>
                     <a class="fragment" title="[*|label=frag1]"></a>
@@ -241,7 +255,7 @@
                 <li class="fragment">Éditée par les CA</li>
                 <li class="fragment">Gestion délicate</li>
                 <li class="fragment"><span class="green">OCSP</span> : <span class="orange">O</span>nline <span class="orange">C</span>ertificate <span class="orange">S</span>tatus <span class="orange">P</span>rotocol</li>
-                <li class="fragment"><span class="green">DANE</span> : <span class="orange">D</span>NS-based <span class="orange">A</span>utihentication of <span class="orange">N</span>amed <span class="orange">E</span>ntities</li>
+                <li  style="text-decoration:line-through" class="fragment"><span class="green">DANE</span> : <span class="orange">D</span>NS-based <span class="orange">A</span>utihentication of <span class="orange">N</span>amed <span class="orange">E</span>ntities</li>
             </ul>
         </section>
 
